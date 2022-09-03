@@ -1,15 +1,25 @@
 const canvas = document.querySelctor("canvas");
-
-// context- 붓을 지정
 const ctx = canvas.getContext("2d");
-
-// canvas에도 적용
-// 드로잉 라인을 할 때 여기서만 수정
 canvas.width =800;
 canvas.height =800;
 
-// canvas 좌표 시스템
-// 왼쪽 코너 제일 위 좌표 x,
-// x,y,가로, 세로
-ctx.rect(40, 40, 100, 100);
-ctx.fil(40, 40, 100,100);
+const colors = [
+    "#ff3838",
+    "#ffb8b8",
+    "#c56cf0",
+    "#ff9f1a",
+    "#fff200",
+    "#32ff7e",
+    "#7efff5",
+    ]
+    
+    ctx.linewidth = 2;
+    let x_coord = 0;
+    let y_coord = 0;
+    function onclick(event){
+    ctx.beginPath();
+    ctx.moveTo(x_coord,y_coord);
+    ctx.strokeStyle = colors[Math.floor(Math.random()*colors.length)];
+    ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.stroke();
+    }
