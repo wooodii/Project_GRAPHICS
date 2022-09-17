@@ -10,38 +10,76 @@
     <title>GRAPHICS</title>
 </head>
 <body>
+
+    <div class="color-options">
+        <!-- 2) 색 선택할 수 있는 박스 생성 -->
+        <input type="color" name="" id="color"/>
+
+        <!-- 3) shift + alt + l 로 한번에 컬러 설정-->
+        <div class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></div> 
+        <div class="color-option" style="background-color: #3498db;" data-color="#3498db"></div> 
+        <div class="color-option" style="background-color: #34495e;" data-color="#34495e"></div>
+        <div class="color-option" style="background-color: #27ae60;" data-color="#27ae60"></div> 
+        <div class="color-option" style="background-color: #8e44ad;" data-color="#8e44ad"></div> 
+        <div class="color-option" style="background-color: #f1c40f;" data-color="#f1c40f"></div> 
+        <div class="color-option" style="background-color: #e74c3c;" data-color="#e74c3c"></div> 
+        <div class="color-option" style="background-color: #95a5a6;" data-color="#95a5a6"></div> 
+        <div class="color-option" style="background-color: #d35400;" data-color="#d35400"></div>
+        <div class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></div> 
+        <div class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></div> 
+        <div class="color-option" style="background-color: #e67e22;" data-color="#e67e22"></div> 
+    </div>
     <!-- canvas요소 = canvas API창 추가 -->
     <canvas></canvas>
     
+    <!-- input (선 굵기, 색, 지우기 버튼 추가) -->
+    <!-- 1) linewidth.js -->
     <input id="line-width" type="range" min="1" max="10"
-    value ="5" step =0.5>
-    <input type="color" name="" id="color"/>
-    
-    <button id ="mode-btn">FILL</button>
-    <button id="destory-btn">Destory</button>
-    <button id="eraser-btn">ERASE</button>
+    value ="5" step =0.5> 
+    <!-- value = 시작점 -->
 
-<div class="color-option" style="background-color: #1abc9c;" data-color="#1abc9c"></div> 
-<div class="color-option" style="background-color: #3498db;" data-color="#3498db"></div> 
-<div class="color-option" style="background-color: #34495e;" data-color="#34495e"></div>
-<div class="color-option" style="background-color: #27ae60;" data-color="#27ae60"></div> 
-<div class="color-option" style="background-color: #8e44ad;" data-color="#8e44ad"></div> 
-<div class="color-option" style="background-color: #f1c40f;" data-color="#f1c40f"></div> 
-<div class="color-option" style="background-color: #e74c3c;" data-color="#e74c3c"></div> 
-<div class="color-option" style="background-color: #95a5a6;" data-color="#95a5a6"></div> 
-<div class="color-option" style="background-color: #d35400;" data-color="#d35400"></div>
-<div class="color-option" style="background-color: #bdc3c7;" data-color="#bdc3c7"></div> 
-<div class="color-option" style="background-color: #2ecc71;" data-color="#2ecc71"></div> 
-<div class="color-option" style="background-color: #e67e22;" data-color="#e67e22"></div> 
 
-<<<<<<< HEAD
-<script src = "./howtodraw.js"></script>
-=======
+    <div class="btns">
+        <!-- 4) 그림판 기능 버튼 만들기 -->
+        <button id="mode-btn">FILL</button>
+        <!-- 5) 모두 초기화 버튼 만들기-->
+        <!--    초기화 = colortpicker에서 하얀색을 선택하고 fill -->
+        <button id="destory-btn">Destory</button>
+        <!-- 6) 지우기 버튼 만들기  -->
+        <button id="eraser-btn">ERASE</button>
+        <!-- 7) 이미지 파일 넣기 -->
+        <!-- accept 어떤 포맷의 파일을 넣을지 지정  -->
+        <input type="file" accept ="image/*">
 
-<input type="file"  accept="image/*"  id="file"/>
-<input type="text" placeholder="Write and then double click" id="text">
-<button>저 장저징</button>
-<script src = "./linewidth.js"></script>
->>>>>>> 54c39df14bd3db7b72b94f2d5dc4dc50a5ebf583
+        <!-- 8) text추가 -->
+        <input type="text" placeholder="Write and double click" id="text">
+
+        <!-- 9) 저장버튼  -->
+        <button id="save"> Save Image</button>
+    </div>
+
+    <canvas></canvas>
+    <div class="btns">
+      <input
+        id="line-width"
+        type="range"
+        min="1"
+        max="10"
+        value="5"
+        step="0.1"
+      />
+      <button id="mode-btn">🩸 Fill</button>
+      <button id="destroy-btn">💣 Destroy</button>
+      <button id="eraser-btn">❌ Erase</button>
+      <label for="file">
+        💅🏻 Add Photo
+        <input type="file" accept="image/*" id="file"
+      /></label>
+      <input type="text" id="text" placeholder="Add text here... :)" />
+      <button id="save">🖼 Save image</button>
+    </div>
+
+    <script src="./linewidth3.js"></script>
+    <script src="./mememaker.js"></script>
 </body>
 </html>
